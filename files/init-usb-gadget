@@ -149,6 +149,7 @@ echo -ne \\xC0           # END_COLLECTION
 cp "$D" "${USB_MOUSE_FUNCTIONS_DIR}/report_desc"
 
 mkdir -p "${USB_CONFIG_DIR}"
+echo 0xa0 > "${USB_CONFIG_DIR}/bmAttributes"
 echo 250 > "${USB_CONFIG_DIR}/MaxPower"
 
 CONFIGS_STRINGS_DIR="${USB_CONFIG_DIR}/${USB_STRINGS_DIR}"
