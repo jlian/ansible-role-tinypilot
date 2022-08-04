@@ -59,6 +59,7 @@ mkdir -p "$USB_KEYBOARD_FUNCTIONS_DIR"
 echo 1 > "${USB_KEYBOARD_FUNCTIONS_DIR}/protocol" # Keyboard
 echo 1 > "${USB_KEYBOARD_FUNCTIONS_DIR}/subclass" # Boot interface subclass
 echo 8 > "${USB_KEYBOARD_FUNCTIONS_DIR}/report_length"
+echo 1 > "${USB_KEYBOARD_FUNCTIONS_DIR}/wakeup_on_write"
 # Write the report descriptor
 D=$(mktemp)
 
@@ -105,6 +106,7 @@ mkdir -p "$USB_MOUSE_FUNCTIONS_DIR"
 echo 0 > "${USB_MOUSE_FUNCTIONS_DIR}/protocol"
 echo 0 > "${USB_MOUSE_FUNCTIONS_DIR}/subclass"
 echo 7 > "${USB_MOUSE_FUNCTIONS_DIR}/report_length"
+echo 1 > "${USB_MOUSE_FUNCTIONS_DIR}/wakeup_on_write"
 # Write the report descriptor
 D=$(mktemp)
 {
